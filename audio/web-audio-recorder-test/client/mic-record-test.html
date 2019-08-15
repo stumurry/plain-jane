@@ -1,0 +1,31 @@
+<!-- https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/ -->
+
+
+<html>
+
+<head>
+    <title>Microphone test</title>
+</head>
+
+<body>
+    <button id="record">Record my audio</button><br>
+    <button id="stop">Stop my audio</button>
+</body>
+<script>
+    let mediaRecorder
+    const record = () => {
+        navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(stream => {
+            mediaRecorder = new MediaRecorder(stream);
+            mediaRecorder.start();
+        });
+    }
+    const stop = () => {
+        mediaRecorder.stop();
+    }
+    document.getElementById("record").addEventListener("click", record);
+    document.getElementById("stop").addEventListener("click", stop);
+    
+</script>
+
+</html>
