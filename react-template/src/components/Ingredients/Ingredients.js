@@ -2,6 +2,7 @@ import React from 'react';
 
 import IngredientForm from './IngredientForm';
 import Search from './Search';
+import IngredientList from './IngredientList';
 
 function Ingredients() {
   return (
@@ -12,6 +13,7 @@ function Ingredients() {
         <Search />
         {/* Need to add list here! */}
       </section>
+      <IngredientList />
     </div>
   );
 }
